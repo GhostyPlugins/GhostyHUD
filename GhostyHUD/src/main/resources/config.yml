@@ -1,0 +1,150 @@
+# ╔═══════════════════════════════════════════╗
+# ║           GhostyHUD Configuration        ║
+# ║         Author: Ger_Gh0stface            ║
+# ╚═══════════════════════════════════════════╝
+#
+# ─── Color Codes ───────────────────────────────────────────────
+#  Legacy:   &0-9, &a-f, &k-r     (e.g. &a, &c, &l)
+#  Hex:      &#RRGGBB or #RRGGBB  (e.g. &#9B59B6)
+#
+# ─── Player Placeholders ───────────────────────────────────────
+#  {player}        Player name
+#  {displayname}   Display name
+#  {uuid}          UUID
+#  {prefix}        LuckPerms prefix
+#  {suffix}        LuckPerms suffix
+#  {rank}          Primary group (capitalised)
+#  {group}         Primary group (raw)
+#  {ping}          Ping in ms
+#  {world}         World name
+#  {health}        Health (1 decimal)
+#  {max_health}    Max health (1 decimal)
+#  {food}          Food level (0-20)
+#  {armor}         Armor value (0-20)
+#  {level}         XP level
+#  {exp}           XP progress (0.00–1.00)
+#  {gamemode}      SURVIVAL / CREATIVE / ADVENTURE / SPECTATOR
+#  {gamemode_short}S / C / A / SP
+#  {x} {y} {z}    Block coordinates
+#  {biome}         Biome name
+#  {vanished}      true / false
+#  {vanish_level}  Numeric vanish level (0 = none)
+#
+# ─── Server Placeholders ───────────────────────────────────────
+#  {online}        Visible player count (excl. vanished)
+#  {online_real}   True online count (incl. vanished)
+#  {max}           Max player slots
+#  {tps}           TPS (1 decimal, max 20)
+#  {server}        Server name
+#  {version}       Server version (e.g. 1.21.1)
+#  {ram_used}      Used RAM in MB
+#  {ram_max}       Max RAM in MB
+#  {vanished_count}Number of vanished players
+#
+# ─── Date / Time Placeholders ──────────────────────────────────
+#  {date}          dd.MM.yyyy
+#  {date_short}    dd.MM.yy
+#  {time}          HH:mm
+#  {time_full}     HH:mm:ss
+#  {day}           Day of week (Monday, Tuesday, …)
+
+# Language: en_US | de_DE  (or any file in the lang/ folder)
+language: en_US
+
+# ─────────────────────────────────────────────
+#                  DATABASE
+# ─────────────────────────────────────────────
+database:
+  # yaml  → stores data in plugins/GhostyHUD/data.yml
+  # mysql → connects to a MySQL / MariaDB server
+  type: yaml
+  mysql:
+    host: localhost
+    port: 3306
+    database: ghostyhud
+    username: root
+    password: password
+
+# ─────────────────────────────────────────────
+#                  TAB LIST
+# ─────────────────────────────────────────────
+tablist:
+  enabled: true
+  update-interval: 40
+  header:
+    - ""
+    - "  &#9B59B6&l✦ &fGhostyHUD &8» &7Network  "
+    - "  &7Online: &5{online}&8/&5{max} &8| &7TPS: &5{tps} &8| &7{date}  "
+    - ""
+  footer:
+    - ""
+    - "  &7Rank: &5{rank} &8| &7Ping: &f{ping}ms &8| &7World: &f{world}  "
+    - "  &7RAM: &f{ram_used}&7/&f{ram_max}&7MB &8| &7v{version}  "
+    - "  &#9B59B6play.example.com  "
+    - ""
+
+# ─────────────────────────────────────────────
+#                 SCOREBOARD
+# ─────────────────────────────────────────────
+scoreboard:
+  enabled: true
+  update-interval: 40
+  title: " &#9B59B6&l✦ &5&lGhostyHUD &r&#9B59B6&l✦ "
+  lines:
+    - "  &8&m──────────────────  "
+    - "  &7Player &8» &f{player}  "
+    - "  &7Rang   &8» &5{rank}  "
+    - "  &7Welt   &8» &f{world}  "
+    - "  &8&m──────────────────  "
+    - "  &7Pos  &8» &f{x}&7, &f{y}&7, &f{z}  "
+    - "  &7Biom &8» &f{biome}  "
+    - "  &8&m──────────────────  "
+    - "  &7Online &8» &f{online}&8/&f{max}  "
+    - "  &7Ping   &8» &f{ping}&7ms  "
+    - "  &7TPS    &8» &f{tps}  "
+    - "  &7RAM    &8» &f{ram_used}&7MB  "
+    - "  &8&m──────────────────  "
+    - "  &#9B59B6play.example.com  "
+
+# ─────────────────────────────────────────────
+#                  BOSS BAR
+# ─────────────────────────────────────────────
+bossbar:
+  enabled: true
+  update-interval: 40
+  title: "&#9B59B6✦ &fGhostyHUD &8| &7{player} &8| &7{online}&8/&5{max} online &8| &7TPS: &f{tps} &8| &7{time}"
+  # PINK | BLUE | RED | GREEN | YELLOW | PURPLE | WHITE
+  color: PURPLE
+  # SOLID | SEGMENTED_6 | SEGMENTED_10 | SEGMENTED_12 | SEGMENTED_20
+  style: SOLID
+  progress: 1.0
+
+# ─────────────────────────────────────────────
+#                 ACTION BAR
+# ─────────────────────────────────────────────
+actionbar:
+  enabled: true
+  update-interval: 40
+  message: "&#9B59B6✦ &7Rang: &5{rank} &8| &7Ping: &f{ping}ms &8| &7❤ &f{health}&8/&f{max_health} &8| &7{time_full}"
+
+# ─────────────────────────────────────────────
+#                   VANISH
+# ─────────────────────────────────────────────
+vanish:
+  # Human-readable names for each vanish level (shown in messages and tab list)
+  # Add / rename levels freely – they map to ghostyhud.vanish.level.<n>
+  level-names:
+    level-1:  "Supporter"
+    level-2:  "Moderator"
+    level-3:  "Senior-Mod"
+    level-4:  "Admin"
+    level-5:  "Senior-Admin"
+    level-6:  "Co-Owner"
+    level-7:  "Owner"
+    level-8:  "Developer"
+    level-9:  "Manager"
+    level-10: "Root"
+
+  # Symbol shown next to vanished players in tab list / scoreboard
+  # (only visible to those who CAN see them)
+  vanish-symbol: "&8[&7V&8]"

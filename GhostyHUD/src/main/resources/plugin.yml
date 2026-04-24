@@ -1,0 +1,88 @@
+name: GhostyHUD
+version: '${project.version}'
+main: de.gergh0stface.ghostyhud.GhostyHUD
+api-version: '1.21'
+authors: [ Ger_Gh0stface ]
+description: A powerful HUD plugin with TabList, Scoreboard, Bossbar, Actionbar and level-based Vanish
+softdepend: [ LuckPerms ]
+
+commands:
+  ghostyhud:
+    description: Main GhostyHUD command
+    aliases: [ ghud, ghosty ]
+    usage: /<command> <reload|help>
+    permission: ghostyhud.admin
+
+  vanish:
+    description: Toggle vanish (level-based)
+    aliases: [ v, invis, invisible ]
+    usage: /<command> [player]
+    permission: ghostyhud.vanish
+
+# ─────────────────────────────────────────────
+#                 PERMISSIONS
+# ─────────────────────────────────────────────
+permissions:
+
+  # Admin
+  ghostyhud.admin:
+    description: Access to all GhostyHUD admin commands
+    default: op
+
+  # ── Vanish base ──────────────────────────────
+  ghostyhud.vanish:
+    description: Can use /vanish on themselves
+    default: op
+
+  ghostyhud.vanish.others:
+    description: Can vanish / reveal other players
+    default: op
+
+  ghostyhud.vanish.seeall:
+    description: Can see ALL vanished players regardless of level
+    default: op
+
+  # ── Vanish levels ────────────────────────────
+  # Assign ONE of these to each staff rank.
+  # Higher number = higher clearance.
+  # A player sees all vanished players whose level <= their own level.
+  #
+  # Suggested mapping:
+  #   ghostyhud.vanish.level.1 → Supporter
+  #   ghostyhud.vanish.level.2 → Moderator
+  #   ghostyhud.vanish.level.3 → Senior-Moderator
+  #   ghostyhud.vanish.level.4 → Admin
+  #   ghostyhud.vanish.level.5 → Senior-Admin / Co-Owner
+  #   ghostyhud.vanish.level.9 → Owner
+  #   ghostyhud.vanish.level.10→ Developer / Root
+
+  ghostyhud.vanish.level.1:
+    description: Vanish level 1 (e.g. Supporter)
+    default: false
+  ghostyhud.vanish.level.2:
+    description: Vanish level 2 (e.g. Moderator)
+    default: false
+  ghostyhud.vanish.level.3:
+    description: Vanish level 3 (e.g. Senior-Moderator)
+    default: false
+  ghostyhud.vanish.level.4:
+    description: Vanish level 4 (e.g. Admin)
+    default: false
+  ghostyhud.vanish.level.5:
+    description: Vanish level 5 (e.g. Senior-Admin)
+    default: false
+  ghostyhud.vanish.level.6:
+    description: Vanish level 6
+    default: false
+  ghostyhud.vanish.level.7:
+    description: Vanish level 7
+    default: false
+  ghostyhud.vanish.level.8:
+    description: Vanish level 8
+    default: false
+  ghostyhud.vanish.level.9:
+    description: Vanish level 9 (e.g. Owner)
+    default: false
+  ghostyhud.vanish.level.10:
+    description: Vanish level 10 (e.g. Developer)
+    default: op

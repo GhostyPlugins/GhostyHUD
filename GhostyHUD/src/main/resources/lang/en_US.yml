@@ -1,0 +1,47 @@
+# ╔═══════════════════════════════════════════╗
+# ║       GhostyHUD - English (en_US)        ║
+# ╚═══════════════════════════════════════════╝
+
+prefix: "&#9B59B6&l✦ &5GhostyHUD &8» &r"
+
+messages:
+
+  # ── Commands ──────────────────────────────
+  reload-success:  "{prefix}&aPlugin reloaded successfully!"
+  reload-failed:   "{prefix}&cReload failed – check the console."
+  no-permission:   "{prefix}&cYou don't have permission to do that!"
+  player-only:     "{prefix}&cOnly players can use this command!"
+  unknown-command: "{prefix}&cUnknown subcommand! Try &5/ghostyhud help&c."
+
+  # ── Help ──────────────────────────────────
+  help:
+    header: " &8&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ "
+    title:  "       &#9B59B6GhostyHUD &8» &7Command Help"
+    spacer: ""
+    cmd-reload: "  &5/ghostyhud reload  &8» &7Reload the plugin"
+    cmd-help:   "  &5/ghostyhud help    &8» &7Show this help"
+    cmd-vanish: "  &5/vanish [player]   &8» &7Toggle vanish"
+    footer: " &8&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ "
+
+  # ── Join / Quit ───────────────────────────
+  join:
+    welcome:    "{prefix}&7Welcome back, &5{player}&7!"
+    first-join: "{prefix}&aWelcome to the server, &5{player}&a! Enjoy your stay &5✦"
+
+  quit:
+    goodbye: "{prefix}&7See you soon, &5{player}&7!"
+
+  # ── Vanish ────────────────────────────────
+  vanish:
+    # Sent to the player who just went vanished
+    vanished:          "{prefix}&7You are now &5invisible &8[Level &5{level} &8– &5{level_name}&8]&7."
+    # Sent to the player who just became visible again
+    unvanished:        "{prefix}&7You are now &avisible&7 again."
+    # Sent to a staff member who vanished another player
+    vanished-other:    "{prefix}&7You vanished &5{target} &8[Level &5{level} &8– &5{level_name}&8]&7."
+    # Sent to a staff member who revealed another player
+    unvanished-other:  "{prefix}&7You revealed &5{target}&7."
+    # Target player not online
+    player-not-found:  "{prefix}&cPlayer not found or not online."
+    # Shown in tab list next to a vanished player (only visible to those who can see them)
+    tab-vanished-tag:  " &8[&7V&8]"

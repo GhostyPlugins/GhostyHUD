@@ -1,0 +1,47 @@
+# ╔═══════════════════════════════════════════╗
+# ║      GhostyHUD - Deutsch (de_DE)         ║
+# ╚═══════════════════════════════════════════╝
+
+prefix: "&#9B59B6&l✦ &5GhostyHUD &8» &r"
+
+messages:
+
+  # ── Befehle ───────────────────────────────
+  reload-success:  "{prefix}&aDas Plugin wurde erfolgreich neu geladen!"
+  reload-failed:   "{prefix}&cFehler beim Neuladen – prüfe die Konsole."
+  no-permission:   "{prefix}&cDafür hast du keine Berechtigung!"
+  player-only:     "{prefix}&cDieser Befehl ist nur für Spieler!"
+  unknown-command: "{prefix}&cUnbekannter Unterbefehl! Versuche &5/ghostyhud help&c."
+
+  # ── Hilfe ─────────────────────────────────
+  help:
+    header: " &8&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ "
+    title:  "       &#9B59B6GhostyHUD &8» &7Befehls-Hilfe"
+    spacer: ""
+    cmd-reload: "  &5/ghostyhud reload  &8» &7Plugin neu laden"
+    cmd-help:   "  &5/ghostyhud help    &8» &7Diese Hilfe anzeigen"
+    cmd-vanish: "  &5/vanish [Spieler]  &8» &7Vanish umschalten"
+    footer: " &8&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ "
+
+  # ── Beitreten / Verlassen ─────────────────
+  join:
+    welcome:    "{prefix}&7Willkommen zurück, &5{player}&7!"
+    first-join: "{prefix}&aHerzlich willkommen, &5{player}&a! Viel Spaß auf dem Server &5✦"
+
+  quit:
+    goodbye: "{prefix}&7Bis bald, &5{player}&7!"
+
+  # ── Vanish ────────────────────────────────
+  vanish:
+    # An den Spieler, der sich gerade versteckt hat
+    vanished:          "{prefix}&7Du bist jetzt &5unsichtbar &8[Level &5{level} &8– &5{level_name}&8]&7."
+    # An den Spieler, der wieder sichtbar ist
+    unvanished:        "{prefix}&7Du bist jetzt wieder &asichtbar&7."
+    # An einen Staff-Member, der jemand anderen gevanisht hat
+    vanished-other:    "{prefix}&7Du hast &5{target} &7gevanisht &8[Level &5{level} &8– &5{level_name}&8]&7."
+    # An einen Staff-Member, der jemand anderen sichtbar gemacht hat
+    unvanished-other:  "{prefix}&7Du hast &5{target} &7wieder sichtbar gemacht."
+    # Ziel-Spieler nicht online
+    player-not-found:  "{prefix}&cSpieler nicht gefunden oder nicht online."
+    # Tab-Listen-Tag neben einem gevanishten Spieler (nur für berechtigte sichtbar)
+    tab-vanished-tag:  " &8[&7V&8]"
